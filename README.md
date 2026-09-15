@@ -1,8 +1,8 @@
-# akaOS
+# akaOS Classic
 
-**akaOS** is a modern, open-source operating system designed for **x86-64**, **x86-32**, and **aarch64** CPUs. It uses the **Limine Bootloader** for **x86-64** and **aarch64**, and **GRUB** for **x86-32**. Developed with a focus on visual excellence and "vibe coding," akaOS features a custom GUI, a POSIX-like shell, and even runs DOOM.
+**akaOS Classic** is a modern, open-source operating system designed for **x86-64**, **x86-32**, and **aarch64** CPUs. It uses the **Limine Bootloader** for **x86-64** and **aarch64**, and **GRUB** for **x86-32**. Developed with a focus on visual excellence and "vibe coding," akaOS Classic features a custom GUI, a POSIX-like shell, and even runs DOOM.
 
-![akaOS Screenshot](https://raw.githubusercontent.com/akaoperatingsystem/akaOS/refs/heads/main/akaOS.png)
+![akaOS Classic Screenshot](https://raw.githubusercontent.com/akaoperatingsystem/akaOS-Classic/refs/heads/main/akaOS.png)
 
 ---
 
@@ -21,7 +21,7 @@
 
 ## 🛠 Prerequisites
 
-To build and run **akaOS**, you will need:
+To build and run **akaOS Classic**, you will need:
 
 - **Compiler**: `gcc` (with cross-compilers for aarch64: `aarch64-linux-gnu-gcc`)
 - **Assembler**: `nasm` (for x86) and `aarch64-linux-gnu-as` (for ARM64)
@@ -32,14 +32,14 @@ To build and run **akaOS**, you will need:
 
 ## 🚀 Building and Running
 
-akaOS uses a versatile `Makefile` to manage builds across architectures.
+akaOS Classic uses a versatile `Makefile` to manage builds across architectures.
 
 ### x86-64 (BIOS & UEFI)
 ```bash
 make            # Build the kernel
 make iso        # Build the bootable ISO
-make run        # Build and run akaOS (BIOS)
-make run-uefi   # Build and run akaOS (UEFI)
+make run        # Build and run akaOS Classic (BIOS)
+make run-uefi   # Build and run akaOS Classic (UEFI)
 ```
 
 ### Other Architectures

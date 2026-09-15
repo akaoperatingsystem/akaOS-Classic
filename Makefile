@@ -1,5 +1,5 @@
 # ============================================================
-# akaOS Makefile — Multi-Architecture (x86_64, x86_32, aarch64)
+# akaOS Classic Makefile — Multi-Architecture (x86_64, x86_32, aarch64)
 # ============================================================
 # Usage:
 #   make                    — Build for x86_64 (default)
@@ -123,7 +123,7 @@ endif
 
 # Output
 KERNEL_BIN = build/boot/akaos.bin
-ISO        = akaOS.iso
+ISO        = akaOS-Classic.iso
 
 .PHONY: all clean run run-uefi iso
 
@@ -198,7 +198,7 @@ iso: $(KERNEL_BIN) limine build/boot/doom1.wad
 	@cp limine/limine-bios.sys build/boot/ && cp limine/limine-bios.sys build/boot/limine/
 	@cp limine/limine-bios-cd.bin limine/limine-uefi-cd.bin build/
 	@cp limine/BOOTX64.EFI build/EFI/BOOT/
-	xorriso -as mkisofs -V "akaOS" -R -J -b limine-bios-cd.bin \
+	xorriso -as mkisofs -V "akaOS Classic" -R -J -b limine-bios-cd.bin \
 		-no-emul-boot -boot-load-size 4 -boot-info-table \
 		--efi-boot limine-uefi-cd.bin \
 		-efi-boot-part --efi-boot-image --protective-msdos-label \
@@ -209,7 +209,7 @@ else ifeq ($(ARCH),x86_32)
 iso: $(KERNEL_BIN) build/boot/doom1.wad
 	@mkdir -p build/boot/grub
 	@echo 'set timeout=3'                          > build/boot/grub/grub.cfg
-	@echo 'menuentry "akaOS (i386)" {'             >> build/boot/grub/grub.cfg
+	@echo 'menuentry "akaOS Classic (i386)" {'     >> build/boot/grub/grub.cfg
 	@echo '    multiboot2 /boot/akaos.bin'         >> build/boot/grub/grub.cfg
 	@echo '    module2 /boot/doom1.wad'            >> build/boot/grub/grub.cfg
 	@echo '    boot'                               >> build/boot/grub/grub.cfg
@@ -222,14 +222,14 @@ iso: $(KERNEL_BIN) limine
 	@echo "timeout: 5" > build/limine.conf
 	@echo "verbose: yes" >> build/limine.conf
 	@echo "" >> build/limine.conf
-	@echo "/akaOS" >> build/limine.conf
+	@echo "/akaOS Classic" >> build/limine.conf
 	@echo "    protocol: limine" >> build/limine.conf
 	@echo "    kernel_path: boot():/boot/akaos.bin" >> build/limine.conf
 	@cp build/limine.conf build/limine/
 	@cp build/limine.conf build/boot/ && cp build/limine.conf build/boot/limine/
 	@cp limine/BOOTAA64.EFI build/EFI/BOOT/
 	@cp limine/limine-uefi-cd.bin build/
-	xorriso -as mkisofs -V "akaOS" -R -J \
+	xorriso -as mkisofs -V "akaOS Classic" -R -J \
 		--efi-boot limine-uefi-cd.bin \
 		-efi-boot-part --efi-boot-image --protective-msdos-label \
 		build -o $(ISO)

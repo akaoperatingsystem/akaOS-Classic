@@ -1,5 +1,5 @@
 /* ============================================================
- * akaOS — Unix-like Shell (GUI-compatible)
+ * akaOS Classic — Unix-like Shell (GUI-compatible)
  * ============================================================ */
 #include "shell.h"
 #include "vga.h"
@@ -32,7 +32,7 @@ static void env_init(void) {
     strcpy(env_keys[0], "USER");     strcpy(env_vals[0], "root");
     strcpy(env_keys[1], "HOME");     strcpy(env_vals[1], "/home/root");
     strcpy(env_keys[2], "SHELL");    strcpy(env_vals[2], "/bin/akash");
-    strcpy(env_keys[3], "HOSTNAME"); strcpy(env_vals[3], "akaOS");
+    strcpy(env_keys[3], "HOSTNAME"); strcpy(env_vals[3], "akaOS Classic");
     strcpy(env_keys[4], "PATH");     strcpy(env_vals[4], "/bin:/usr/bin");
     strcpy(env_keys[5], "TERM");     strcpy(env_vals[5], "vga-text");
     env_count = 6;
@@ -167,11 +167,11 @@ static void cmd_echo(const char *args) {
 
 static void cmd_uname(const char *args) {
     args = skip_spaces(args);
-    if (strcmp(args,"-a")==0) vga_print("akaOS akaOS 1.1 x86_64 akaOS\n");
-    else vga_print("akaOS\n");
+    if (strcmp(args,"-a")==0) vga_print("akaOS Classic akaOS Classic 1.1 x86_64 akaOS Classic\n");
+    else vga_print("akaOS Classic\n");
 }
 static void cmd_whoami(const char *a) { (void)a; vga_print("root\n"); }
-static void cmd_hostname(const char *a) { (void)a; vga_print("akaOS\n"); }
+static void cmd_hostname(const char *a) { (void)a; vga_print("akaOS Classic\n"); }
 static void cmd_uptime(const char *a) {
     (void)a; char b[64]; timer_format_uptime(b,64); vga_print("up "); vga_print(b); vga_print("\n");
 }
@@ -294,7 +294,7 @@ void shell_print_prompt(void) {
     }
     vga_print_color(user ? user : "user", VGA_LIGHT_GREEN, VGA_BLACK);
     vga_print_color("@", VGA_LIGHT_GREEN, VGA_BLACK);
-    vga_print_color(host ? host : "akaOS", VGA_LIGHT_GREEN, VGA_BLACK);
+    vga_print_color(host ? host : "akaOS Classic", VGA_LIGHT_GREEN, VGA_BLACK);
     vga_print_color(":", VGA_WHITE, VGA_BLACK);
     vga_print_color(dp, VGA_LIGHT_BLUE, VGA_BLACK);
     vga_print_color("$ ", VGA_WHITE, VGA_BLACK);

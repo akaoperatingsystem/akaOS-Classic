@@ -1,5 +1,5 @@
 /* ============================================================
- * akaOS — Kernel Main (robust boot with fallback)
+ * akaOS Classic — Kernel Main (robust boot with fallback)
  * ============================================================ */
 #include "arch.h"
 #include "fb.h"
@@ -80,11 +80,11 @@ uint32_t sys_total_memory_mb = 0;
 
 static void show_boot_screen(void) {
 #if defined(ARCH_X86_32)
-  vga_print_color("\n  akaOS 1.1 — x86_32\n\n", VGA_LIGHT_GREEN, VGA_BLACK);
+  vga_print_color("\n  akaOS Classic 1.1 — x86_32\n\n", VGA_LIGHT_GREEN, VGA_BLACK);
 #elif defined(ARCH_AARCH64)
-  vga_print_color("\n  akaOS 1.1 — ARM64\n\n", VGA_LIGHT_GREEN, VGA_BLACK);
+  vga_print_color("\n  akaOS Classic 1.1 — ARM64\n\n", VGA_LIGHT_GREEN, VGA_BLACK);
 #else
-  vga_print_color("\n  akaOS 1.1 — x86_64\n\n", VGA_LIGHT_GREEN, VGA_BLACK);
+  vga_print_color("\n  akaOS Classic 1.1 — x86_64\n\n", VGA_LIGHT_GREEN, VGA_BLACK);
 #endif
 
   vga_print_color("  [OK] ", VGA_LIGHT_GREEN, VGA_BLACK);

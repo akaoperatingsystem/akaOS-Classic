@@ -1,5 +1,5 @@
 /* ============================================================
- * akaOS — Network Stack (PCI + e1000 + ARP/IP/ICMP)
+ * akaOS Classic — Network Stack (PCI + e1000 + ARP/IP/ICMP)
  * ============================================================ */
 #include "net.h"
 #include "arch.h"
@@ -727,7 +727,7 @@ int net_http_get(uint32_t ip, int port, const char *host, const char *path,
     const char *a2 = " HTTP/1.0\r\nHost: ";
     for (int i = 0; a2[i] && rp < (int)sizeof(req) - 1; i++) req[rp++] = a2[i];
     for (int i = 0; host[i] && rp < (int)sizeof(req) - 1; i++) req[rp++] = host[i];
-    const char *a3 = "\r\nUser-Agent: akaOS\r\nConnection: close\r\n\r\n";
+    const char *a3 = "\r\nUser-Agent: akaOS Classic\r\nConnection: close\r\n\r\n";
     for (int i = 0; a3[i] && rp < (int)sizeof(req) - 1; i++) req[rp++] = a3[i];
     req[rp] = '\0';
 
