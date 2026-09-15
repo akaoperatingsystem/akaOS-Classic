@@ -1,5 +1,5 @@
 /* ============================================================
- * akaOS — GUI Desktop (Simplified, Robust)
+ * akaOS Classic — GUI Desktop (Simplified, Robust)
  * ============================================================ */
 #include "gui.h"
 #include "arch.h"
@@ -595,7 +595,7 @@ static void draw_about_window(void) {
   fb_draw_char(bmin + 2, ay + 7, '-', 0xFFFFFF, 0xe0af68, 1);
 
   /* Top Title */
-  fb_draw_string(ax + aw / 2 - (5 * 8), ay + 40, "akaOS", 0x7dcfff, 0x1e1e2e,
+  fb_draw_string(ax + aw / 2 - (13 * 8), ay + 40, "akaOS Classic", 0x7dcfff, 0x1e1e2e,
                  2); /* Scaled up */
   char ver_str[64];
   memset(ver_str, 0, sizeof(ver_str));
@@ -621,7 +621,7 @@ static void draw_about_window(void) {
 
   fb_draw_string(ax + 20, ay + 140, "Display:     Multiboot2 Framebuffer",
                  0xAAAAAA, 0x1e1e2e, 1);
-  fb_draw_string(ax + 20, ay + 180, "Developed by akaOS Team", 0xbb9af7,
+  fb_draw_string(ax + 20, ay + 180, "Developed by akaOS Classic Team", 0xbb9af7,
                  0x1e1e2e, 1);
 }
 
@@ -2574,7 +2574,7 @@ static void br_load_url_internal(const char *url, int push_hist) {
 
   if (starts_with(url, "https://")) {
     br_render_html_to_text(
-        "akaOS Browser\n\nHTTPS (TLS) is not supported yet.\n"
+        "akaOS Classic Browser\n\nHTTPS (TLS) is not supported yet.\n"
         "Try http://<ip>/ or local files.\n");
     br_set_status("No HTTPS", 180);
     return;
@@ -2672,7 +2672,7 @@ static void br_load_url_internal(const char *url, int push_hist) {
   if (starts_with(url, "about:")) {
     if (strcmp(url, "about:home") == 0 || strcmp(url, "about:") == 0) {
       br_render_html_to_text(
-          "akaOS Browser (about:home)\n\n"
+          "akaOS Classic Browser (about:home)\n\n"
           "This is a minimal text browser.\n\n"
           "Open local files:\n"
           "  /home/root/readme.txt\n"
@@ -3853,7 +3853,7 @@ static void draw_settings_tab_system(int cx, int cy, int cw, int ch) {
   /* Kernel */
   fb_draw_string(cx + 10, cy + 204, "Kernel", 0x9ece6a, 0x1a1b26, 1);
   fb_draw_hline(cx + 10, cy + 216, cw - 20, 0x30363d);
-  draw_string_ellipsis(cx + 20, cy + 226, "akaOS Kernel 1.1", 0xFFFFFF,
+  draw_string_ellipsis(cx + 20, cy + 226, "akaOS Classic Kernel 1.1", 0xFFFFFF,
                        0x1a1b26, 1, cw - 40);
   char boot_str[64];
   memset(boot_str, 0, sizeof(boot_str));
@@ -3938,7 +3938,7 @@ static void draw_settings_tab_about(int cx, int cy, int cw, int ch) {
   }
 
   /* OS Name big */
-  fb_draw_string(cx + (cw - 5 * 16) / 2, cy + 20, "akaOS", 0x7dcfff, 0x1a1b26,
+  fb_draw_string(cx + (cw - 13 * 16) / 2, cy + 20, "akaOS Classic", 0x7dcfff, 0x1a1b26,
                  2);
   fb_draw_string(cx + (cw - 20 * 8) / 2, cy + 50, "A Modern x86_64 Kernel",
                  0x565f89, 0x1a1b26, 1);
@@ -3969,7 +3969,7 @@ static void draw_settings_tab_about(int cx, int cy, int cw, int ch) {
 
   fb_draw_string(cx + 20, cy + 178, "Developed with passion", 0xbb9af7,
                  0x1a1b26, 1);
-  draw_string_ellipsis(cx + 20, cy + 198, "github.com/akaoperatingsystem/akaOS",
+  draw_string_ellipsis(cx + 20, cy + 198, "github.com/akaoperatingsystem/akaOS-Classic",
                        0x7aa2f7, 0x1a1b26, 1, cw - 40);
 
   /* License badge */
@@ -4261,7 +4261,7 @@ void gui_init(void) {
   sysmon_init(); /* Initialize backend tracking! */
 
   gui_term_set_color(0x7dcfff);
-  gui_term_print("  Welcome to akaOS Terminal\n");
+  gui_term_print("  Welcome to akaOS Classic Terminal\n");
   gui_term_set_color(0xa9b1d6);
   gui_term_print("  Type 'help' for commands.\n\n");
   shell_print_prompt();

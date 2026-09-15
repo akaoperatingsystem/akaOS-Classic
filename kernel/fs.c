@@ -1,5 +1,5 @@
 /* ============================================================
- * akaOS — In-Memory Filesystem Implementation
+ * akaOS Classic — In-Memory Filesystem Implementation
  * ============================================================
  * A simple RAM-based directory tree with path resolution,
  * file creation, and basic content read/write.
@@ -156,14 +156,14 @@ void fs_init(void) {
     /* /etc/hostname */
     fs_node_t *hostname = create_child(etc, "hostname", FS_FILE);
     if (hostname) {
-        strcpy(hostname->content, "akaOS\n");
-        hostname->size = 6;
+        strcpy(hostname->content, "akaOS Classic\n");
+        hostname->size = strlen(hostname->content);
     }
 
     /* /etc/motd */
     fs_node_t *motd = create_child(etc, "motd", FS_FILE);
     if (motd) {
-        const char *msg = "Welcome to akaOS — a simple Unix-like operating system.\n";
+        const char *msg = "Welcome to akaOS Classic — a simple Unix-like operating system.\n";
         strcpy(motd->content, msg);
         motd->size = strlen(msg);
     }
@@ -171,7 +171,7 @@ void fs_init(void) {
     /* /etc/os-release */
     fs_node_t *osrel = create_child(etc, "os-release", FS_FILE);
     if (osrel) {
-        const char *data = "NAME=\"akaOS\"\nVERSION=\"1.1\"\nARCH=\"x86_64\"\n";
+        const char *data = "NAME=\"akaOS Classic\"\nVERSION=\"1.1\"\nARCH=\"x86_64\"\n";
         strcpy(osrel->content, data);
         osrel->size = strlen(data);
     }
