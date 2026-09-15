@@ -1,5 +1,8 @@
 # akaOS Classic
 
+> [!WARNING]
+> **End of Life (EOL) Notice:** akaOS Classic is officially End-of-Life. There will be no further updates or bug fixes, and some features or hardware compatibility may not work on newer computers. Development has moved to [akaOS Alpha](https://github.com/akaoperatingsystem/akaOS-Alpha).
+
 **akaOS Classic** is a modern, open-source operating system designed for **x86-64**, **x86-32**, and **aarch64** CPUs. It uses the **Limine Bootloader** for **x86-64** and **aarch64**, and **GRUB** for **x86-32**. Developed with a focus on visual excellence and "vibe coding," akaOS Classic features a custom GUI, a POSIX-like shell, and even runs DOOM.
 
 ![akaOS Classic Screenshot](https://raw.githubusercontent.com/akaoperatingsystem/akaOS-Classic/refs/heads/main/akaOS.png)
